@@ -42,18 +42,18 @@ function resize(){
  });
 }
 
-jQuery.resizable = function (resizerID, VerOrHol){
+jQuery.resizable = function (resizerID, VerOrHor){
     jQuery('#' + resizerID).bind('mousedown', function(e){
         var start = e.pageY;
-        if (VerOrHol == 'H') start = e.pageX;
+        if (VerOrHor == 'H') start = e.pageX;
         jQuery('body').bind('mouseup', function(){
             jQuery('body').unbind('mousemove');
             jQuery('body').unbind('mouseup');
         });
         jQuery('body').bind("mousemove", function(e){
             var end = e.pageX;
-            if (VerOrHol == 'V') end = e.pageY;
-            if (VerOrHol == 'V') {
+            if (VerOrHor == 'V') end = e.pageY;
+            if (VerOrHor == 'V') {
                 jQuery('#target-html').outerHeight(jQuery('#target-html').outerHeight() + (end - start));
                 jQuery('#target-css').outerHeight(jQuery('#target-css').outerHeight() - (end - start));
             } else {
