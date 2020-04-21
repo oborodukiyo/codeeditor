@@ -27,20 +27,27 @@
 <div class="container">
     <div id="runner">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand"><strong>RUNNER</strong></a>
+            <a class="navbar-brand"><strong>WORKBENCH</strong></a>
             <form class="form-inline">
-                <input class="btn btn-primary" type="button" value="RUN" onclick="runner()">
+                <input class="btn bg-custom text-light px-3 py-2 fas" type="button" value="&#xf04b" onclick="runner()">
             </form>
         </nav>
-        <div class="d-flex justify-content-between" id="workbench">
+        <div class="d-flex justify-content-start" id="workbench">
             <div id="left">
-                <div contenteditable id="target-html" class="p-3"></div>
-                <div id="resizeV" style="border: 1px solid #333"></div>
-                <div contenteditable id="target-css" class="p-3"></div>
+                <div>
+                    <div class="windowfor">HTML</div>
+                    <div contenteditable id="target-html" class="p-3"></div>
+                </div>
+                <div id="resizeV"></div>
+                <div>
+                   <div class="windowfor">CSS</div>
+                   <div contenteditable id="target-css" class="p-3"></div>
+               </div>
             </div>
-            <div id="resizeH" style="border: 1px solid #333"></div>
+            <div id="resizeH"></div>
             <div class="bg-white p-0" id="right">
-                <iframe id="result" src="" frameborder="0"></iframe>
+                <div class="windowfor">Result <span id="widthtag"></span></div>
+                <iframe id="result" class="p-3" src="" frameborder="0"></iframe>
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 body{
     height: 100vh;
+    color: #333;
+    font-family: 'Noto Sans JP', 'Lato';
 }
 
 .container{
@@ -16,6 +18,7 @@ body{
 
 #workbench{
     width: 100%!important;
+    border: 2px solid #333;
 }
 
 #left{
@@ -26,30 +29,63 @@ body{
     width:50%;
 }
 
+#resizeV{
+    cursor: row-resize;
+    background: #ccc;
+    border: 1px solid #ccc;
+}
+
+#resizeH{
+    cursor: col-resize;
+    background: #ccc;
+    border: 1px solid #ccc;
+}
+
 #target-html{
-    height:200px;
+    height:calc(300px - 1.5em);
     width:100%;
     background: white;
     overflow: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    border:2px solid #333;
 }
 
 #target-css{
-    height:200px;
+    height:calc(300px - 1.5em);
     width:100%;
     background: white;
+    overflow: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    border:2px solid #333;
 }
 
 iframe{
     width: 100%;
-    height: 100%;
+    height: calc(100% - 1.5em);
     background-color: #fff;
+    pointer-events: none;
+}
+
+.windowfor{
+    max-height: 1.5em;
+    background: #fff;
+    padding-left: .5em;
+    font-size: .8em;
+    font-weight: bold;
+    color: #ccc;
+    user-select: none;
+}
+
+#widthtag{
+    font-size: .8em;
+    font-weight: normal;
+    color: #ccc;
+    margin-left: 1em;
+}
+
+.bg-custom{
+    background: #BAA4C8;
 }
 
