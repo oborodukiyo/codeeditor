@@ -38,7 +38,7 @@ $(function(){
 
 function resize(){
  $('#right').css({
-    "width":$('#runner').outerWidth() - $('#left').outerWidth()- $('#resizeH').outerWidth() + "px"
+    "width":$('#runner').outerWidth() - $('#left').outerWidth()- $('#resizeH').outerWidth() - 4 + "px"
  });
 }
 
@@ -46,20 +46,21 @@ jQuery.resizable = function (resizerID, VerOrHor){
     jQuery('#' + resizerID).bind('mousedown', function(e){
         var start = e.pageY;
         if (VerOrHor == 'H') start = e.pageX;
-        jQuery('body').bind('mouseup', function(){
-            jQuery('body').unbind('mousemove');
-            jQuery('body').unbind('mouseup');
+        jQuery('#runner').bind('mouseup', function(){
+            jQuery('#runner').unbind('mousemove');
+            jQuery('#runner').unbind('mouseup');
         });
-        jQuery('body').bind("mousemove", function(e){
+        jQuery('#runner').bind("mousemove", function(e){
             var end = e.pageX;
             if (VerOrHor == 'V') end = e.pageY;
             if (VerOrHor == 'V') {
                 jQuery('#target-html').outerHeight(jQuery('#target-html').outerHeight() + (end - start));
                 jQuery('#target-css').outerHeight(jQuery('#target-css').outerHeight() - (end - start));
             } else {
-                jQuery('#left').outerWidth(jQuery('#left').outerWidth() + (end - start));
-                jQuery('#right').outerWidth(jQuery('#right').outerWidth() - (end - start));
-                resize()
+                let lw = jQuery('#left').outerWidth();
+                let rw = jQuery('#right').outerWidth();
+                jQuery('#left').outerWidth(lw + (end - start));
+                jQuery('#right').outerWidth(rw - (end - start));
 
                 document.getElementById('widthtag').innerText = jQuery('#right').outerWidth() + "px";
             }
