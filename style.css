@@ -18,15 +18,20 @@ body{
 
 #workbench{
     width: 100%!important;
+    height: 600px;
     border: 2px solid #333;
+    overflow: hidden;
 }
 
 #left{
-    width:50%;
+    width: 50%;
+    min-width: 100px;
+    height: 600px;
 }
 
 #right{
-    width:50%;
+    width: 50%;
+    min-width: 100px;
 }
 
 #resizeV{
@@ -42,7 +47,6 @@ body{
 }
 
 #target-html{
-    height:calc(300px - 1.5em);
     width:100%;
     background: white;
     overflow: auto;
@@ -52,7 +56,6 @@ body{
 }
 
 #target-css{
-    height:calc(300px - 1.5em);
     width:100%;
     background: white;
     overflow: auto;
@@ -69,7 +72,7 @@ iframe{
 }
 
 .windowfor{
-    max-height: 1.5em;
+    max-height: 1.5rem;
     background: #fff;
     padding-left: .5em;
     font-size: .8em;
@@ -85,7 +88,10 @@ iframe{
     margin-left: 1em;
 }
 
-.bg-custom{
+.bg-custom1{
     background: #BAA4C8;
 }
 
+.bg-custom2{
+    background: #C0C0C0;
+}

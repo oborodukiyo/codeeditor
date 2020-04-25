@@ -29,17 +29,18 @@
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand"><strong>WORKBENCH</strong></a>
             <form class="form-inline">
-                <input class="btn bg-custom text-light px-3 py-2" type="button" value="RUN" onclick="runner()">
+                <input class="btn bg-custom2 text-light px-3 py-2 mr-3" type="button" value="Clear All" onclick="clearall()">
+                <input class="btn bg-custom1 text-light px-3 py-2" type="button" value="Save & Run" onclick="runner()">
             </form>
         </nav>
         <div class="d-flex justify-content-start" id="workbench">
             <div id="left">
-                <div>
+                <div id="l-top">
                     <div class="windowfor">HTML</div>
                     <div contenteditable id="target-html" class="p-3"></div>
                 </div>
                 <div id="resizeV"></div>
-                <div>
+                <div id="l-bottom">
                    <div class="windowfor">CSS</div>
                    <div contenteditable id="target-css" class="p-3"></div>
                </div>
@@ -47,7 +48,7 @@
             <div id="resizeH"></div>
             <div class="bg-white p-0" id="right">
                 <div class="windowfor">Result <span id="widthtag"></span></div>
-                <iframe id="result" src="" frameborder="0"></iframe>
+                <iframe id="result" class="p-1" src="" frameborder="0"></iframe>
             </div>
         </div>
     </div>
